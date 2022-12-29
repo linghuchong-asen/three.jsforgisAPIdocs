@@ -14,7 +14,7 @@ export default defineUserConfig({
   shouldPrefetch: false,
 
   plugins: [
-    /* searchProPlugin({
+    searchProPlugin({
       // 索引全部内容
       indexContent: true,
       locales: {
@@ -22,6 +22,6 @@ export default defineUserConfig({
           placeholder: "搜索 Ctrl+K",
         },
       },
-    }), */
+    }),
   ],
 });
