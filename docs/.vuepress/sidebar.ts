@@ -28,6 +28,7 @@ export const sidebar_hope = sidebar({
         { text: "Line3", link: "/APIdocs/math/Line3.md" },
         { text: "Matrix3", link: "/APIdocs/math/Matrix3.md" },
         { text: "Matrix4", link: "/APIdocs/math/Matrix4.md" },
+        { text: "MathUtils", link: "/APIdocs/math/MathUtils.md" },
         { text: "Quaternion", link: "/APIdocs/math/Quaternion.md" },
         { text: "Ray", link: "/APIdocs/math/Ray.md" },
         { text: "Sphere", link: "/APIdocs/math/Sphere.md" },
@@ -181,7 +182,7 @@ export const sidebar_hope = sidebar({
       ],
     },
     {
-      text: "外观",
+      text: "材质",
       link: "/APIdocs/material/Material.md",
       collapsible: true,
       children: [
@@ -329,6 +330,10 @@ export const sidebar_hope = sidebar({
         {
           text: "多边形",
           link: "/example/EntityPolygon.md",
+        },
+        {
+          text: "拾取点",
+          link: "/example/pickPoint.md",
         },
       ],
     },
