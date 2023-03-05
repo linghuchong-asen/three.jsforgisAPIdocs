@@ -8,29 +8,29 @@
 
 options对象拥有以下属性：
 
-| Name                        | Type                                                         | Default                    | Description                                                  |
-| :-------------------------- | :----------------------------------------------------------- | :------------------------- | :----------------------------------------------------------- |
-| `show`                      | [Property](https://www.vvpstk.com/public/Cesium/Documentation/Property.html) | `true`                     | `optional`指定显隐性。                                       |
-| `uri`                       | [Property](https://www.vvpstk.com/public/Cesium/Documentation/Property.html) |                            | `optional`glTF资源路径。                                     |
-| `scale`                     | [Property](https://www.vvpstk.com/public/Cesium/Documentation/Property.html) | `1.0`                      | `optional`放大比例。                                         |
-| `minimumPixelSize`          | [Property](https://www.vvpstk.com/public/Cesium/Documentation/Property.html) | `0.0`                      | `optional`一个数字属性，用于指定模型的最小像素大小，而不考虑缩放。 |
-| `maximumScale`              | [Property](https://www.vvpstk.com/public/Cesium/Documentation/Property.html) |                            | `optional`模型最大比例尺大小. 在这个比例尺内模型模型大小缩放受minimumPixelSize限制，超过这个比例尺，不受minimumPixelSize限制 |
-| `incrementallyLoadTextures` | [Property](https://www.vvpstk.com/public/Cesium/Documentation/Property.html) | `true`                     | `optional`设置在加载模型后纹理是否可以继续流入，默认是true，据说是在动态修改贴图的时候使用的。 |
-| `runAnimations`             | [Property](https://www.vvpstk.com/public/Cesium/Documentation/Property.html) | `true`                     | `optional`指定是否应该启动模型中指定的gltf动画。             |
-| `clampAnimations`           | [Property](https://www.vvpstk.com/public/Cesium/Documentation/Property.html) | `true`                     | `optional`指定glTF动画是否应在没有关键帧的持续时间内保持最后一个姿势。 |
-| `shadows`                   | [Property](https://www.vvpstk.com/public/Cesium/Documentation/Property.html) | `ShadowMode.ENABLED`       | `optional`枚举属性。从每个光源投射或接收阴影的模式。         |
-| `heightReference`           | [Property](https://www.vvpstk.com/public/Cesium/Documentation/Property.html) | `HeightReference.NONE`     | `optional`相对于地形的位置。                                 |
-| `silhouetteColor`           | [Property](https://www.vvpstk.com/public/Cesium/Documentation/Property.html) | `Color.RED`                | `optional`指定的模型边框颜色 [`Color`](https://www.vvpstk.com/public/Cesium/Documentation/Color.html) |
-| `silhouetteSize`            | [Property](https://www.vvpstk.com/public/Cesium/Documentation/Property.html) | `0.0`                      | `optional`边框大小（像素）。                                 |
-| `color`                     | [Property](https://www.vvpstk.com/public/Cesium/Documentation/Property.html) | `Color.WHITE`              | `optional`指定Color[`Color`](https://www.vvpstk.com/public/Cesium/Documentation/Color.html)与模型的渲染颜色混合的属性 [`Color`](https://www.vvpstk.com/public/Cesium/Documentation/Color.html) |
-| `colorBlendMode`            | [Property](https://www.vvpstk.com/public/Cesium/Documentation/Property.html) | `ColorBlendMode.HIGHLIGHT` | `optional`一个枚举属性，指定颜色混合模式。                   |
-| `colorBlendAmount`          | [Property](https://www.vvpstk.com/public/Cesium/Documentation/Property.html) | `0.5`                      | `optional`混合模式的强度值。当colorBlendMode为Cesium.ColorBlendMode.MIX时有效，范围0-1，0表示不和颜色混合，1则表示替换。 |
-| `imageBasedLightingFactor`  | [Property](https://www.vvpstk.com/public/Cesium/Documentation/Property.html) | `new Cartesian2(1.0, 1.0)` | `optional`指定基于漫反射和镜面反射图像的照明的属性.          |
-| `lightColor`                | [Property](https://www.vvpstk.com/public/Cesium/Documentation/Property.html) |                            | `optional`指定光源颜色。默认为 `undefined`。                 |
-| `distanceDisplayCondition`  | [Property](https://www.vvpstk.com/public/Cesium/Documentation/Property.html) |                            | `optional`指定在距相机某个距离内显示。                       |
-| `nodeTransformations`       | [PropertyBag](https://www.vvpstk.com/public/Cesium/Documentation/PropertyBag.html) |                            | `optional`一个对象，其中的键是节点的名称，而值是 [`TranslationRotationScale`](https://www.vvpstk.com/public/Cesium/Documentation/TranslationRotationScale.html) 属性，描述了要应用于该节点的转换。 转换是在glTF中指定的节点现有转换之后应用的，并且不会替换节点现有转换。(轮胎转动就需要该属性。) |
-| `articulations`             | [PropertyBag](https://www.vvpstk.com/public/Cesium/Documentation/PropertyBag.html) |                            | `optional`模型关节（见CZML Model articulation 示例）它的键由关节名称，单个空格和阶段名称组成，值是数字属性。 |
-| `clippingPlanes`            | [Property](https://www.vvpstk.com/public/Cesium/Documentation/Property.html) |                            | `optional`指定 [`ClippingPlaneCollection`](https://www.vvpstk.com/public/Cesium/Documentation/ClippingPlaneCollection.html) 属性，用于有选择地禁用渲染模型。 |
+| Name                           | Type        | Default                    | Description                                                  |
+| :----------------------------- | :---------- | :------------------------- | :----------------------------------------------------------- |
+| `url`:triangular_flag_on_post: | string      | `true`                     | glTF资源路径。                                               |
+| `show`                         | Property    |                            | `optional`指定显隐性。                                       |
+| `scale`                        | Property    | `1.0`                      | `optional`放大比例。                                         |
+| `minimumPixelSize`             | Property    | `0.0`                      | `optional`一个数字属性，用于指定模型的最小像素大小，而不考虑缩放。 |
+| `maximumScale`                 | Property    |                            | `optional`模型最大比例尺大小. 在这个比例尺内模型模型大小缩放受minimumPixelSize限制，超过这个比例尺，不受minimumPixelSize限制 |
+| `incrementallyLoadTextures`    | Property    | `true`                     | `optional`设置在加载模型后纹理是否可以继续流入，默认是true，据说是在动态修改贴图的时候使用的。 |
+| `runAnimations`                | Property    | `true`                     | `optional`指定是否应该启动模型中指定的gltf动画。             |
+| `clampAnimations`              | Property    | `true`                     | `optional`指定glTF动画是否应在没有关键帧的持续时间内保持最后一个姿势。 |
+| `shadows`                      | Property    | `ShadowMode.ENABLED`       | `optional`枚举属性。从每个光源投射或接收阴影的模式。         |
+| `heightReference`              | Property    | `HeightReference.NONE`     | `optional`相对于地形的位置。                                 |
+| `silhouetteColor`              | Property    | `Color.RED`                | `optional`指定的模型边框颜色 [`Color`](https://www.vvpstk.com/public/Cesium/Documentation/Color.html) |
+| `silhouetteSize`               | Property    | `0.0`                      | `optional`边框大小（像素）。                                 |
+| `color`                        | Property    | `Color.WHITE`              | `optional`指定Color[`Color`](https://www.vvpstk.com/public/Cesium/Documentation/Color.html)与模型的渲染颜色混合的属性 [`Color`](https://www.vvpstk.com/public/Cesium/Documentation/Color.html) |
+| `colorBlendMode`               | Property    | `ColorBlendMode.HIGHLIGHT` | `optional`一个枚举属性，指定颜色混合模式。                   |
+| `colorBlendAmount`             | Property    | `0.5`                      | `optional`混合模式的强度值。当colorBlendMode为Cesium.ColorBlendMode.MIX时有效，范围0-1，0表示不和颜色混合，1则表示替换。 |
+| `imageBasedLightingFactor`     | Property    | `new Cartesian2(1.0, 1.0)` | `optional`指定基于漫反射和镜面反射图像的照明的属性.          |
+| `lightColor`                   | Property    |                            | `optional`指定光源颜色。默认为 `undefined`。                 |
+| `distanceDisplayCondition`     | Property    |                            | `optional`指定在距相机某个距离内显示。                       |
+| `nodeTransformations`          | PropertyBag |                            | `optional`一个对象，其中的键是节点的名称，而值是 [`TranslationRotationScale`](https://www.vvpstk.com/public/Cesium/Documentation/TranslationRotationScale.html) 属性，描述了要应用于该节点的转换。 转换是在glTF中指定的节点现有转换之后应用的，并且不会替换节点现有转换。(轮胎转动就需要该属性。) |
+| `articulations`                | PropertyBag |                            | `optional`模型关节（见CZML Model articulation 示例）它的键由关节名称，单个空格和阶段名称组成，值是数字属性。 |
+| `clippingPlanes`               | Property    |                            | `optional`指定 [`ClippingPlaneCollection`](https://www.vvpstk.com/public/Cesium/Documentation/ClippingPlaneCollection.html) 属性，用于有选择地禁用渲染模型。 |
 
 ## 属性
 

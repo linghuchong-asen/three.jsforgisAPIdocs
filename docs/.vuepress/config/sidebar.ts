@@ -8,7 +8,7 @@ export const sidebar_hope = sidebar({
       link: "/APIdocs/index.md",
     },
     {
-      text: "基础",
+      text: "核心",
       link: "/APIdocs/core/Viewer.md",
       collapsible: true,
       children: [
@@ -47,6 +47,14 @@ export const sidebar_hope = sidebar({
         {
           text: "primitiveGroup",
           link: "/APIdocs/primitive/PrimitiveGroup.md",
+        },
+        {
+          text: "Model",
+          link: "/APIdocs/primitive/Model.md",
+        },
+        {
+          text: "Models",
+          link: "/APIdocs/primitive/Models.md",
         },
       ],
     },
@@ -299,6 +307,15 @@ export const sidebar_hope = sidebar({
         { text: "Kml数据源", link: "/APIdocs/dataSource/KmlDataSource.md" },
       ],
     },
+    {
+      text: "基础",
+      link: "/APIdocs/basic/Object3D.md",
+      collapsible: true,
+      children: [
+        { text: "Object3D", link: "/APIdocs/basic/Object3D.md" },
+        { text: "Raycaster", link: "/APIdocs/basic/Raycaster.md" },
+      ],
+    },
   ],
   "/example/": [
     {
@@ -316,8 +333,12 @@ export const sidebar_hope = sidebar({
           link: "/example/Camera.md",
         },
         {
-          text: "加载模型",
+          text: "加载模型Entity方式",
           link: "/example/EntityModel.md",
+        },
+        {
+          text: "加载模型Primitive方式",
+          link: "/example/PrimitiveModel.md",
         },
         {
           text: "画点",
@@ -334,6 +355,10 @@ export const sidebar_hope = sidebar({
         {
           text: "拾取点",
           link: "/example/pickPoint.md",
+        },
+        {
+          text: "修改天空盒",
+          link: "/example/setSkyBox.md",
         },
       ],
     },

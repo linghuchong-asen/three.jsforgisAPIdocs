@@ -13,12 +13,14 @@
 ## 代码示例
 
 ```js
-const a = new THREE.Vector2( 0, 1 ); //no arguments; will be initialised to (0, 0) const b = new THREE.Vector2( ); const d = a.distanceTo( b );
+const a = new THREE.Vector2( 0, 1 ); //no arguments; will be initialised to (0, 0) 
+const b = new THREE.Vector2( ); 
+const d = a.distanceTo( b );
 ```
 
 ## 构造函数
 
-### Vector2( x : Float, y : Float )
+### Vector2( x : number, y : number)
 
 x - 向量的x值，默认为**0**。
 y - 向量的y值，默认为**0**。
@@ -44,10 +46,6 @@ Read-only flag to check if a given object is of type Vector2.
 ### .[y](https://threejs.org/docs/index.html#api/zh/math/Vector2.y) : Float
 
 ## 方法
-
-### .[add](https://threejs.org/docs/index.html#api/zh/math/Vector2.add) ( v : [Vector2](https://threejs.org/docs/index.html#api/zh/math/Vector2) ) : this
-
-将传入的向量[v](https://threejs.org/docs/index.html#api/zh/math/Vector2)和这个向量相加。
 
 ### .[addScalar](https://threejs.org/docs/index.html#api/zh/math/Vector2.addScalar) ( s : Float ) : this
 

@@ -10,7 +10,7 @@ const instance = new Webgis.GeometryInstance({
 });
 
 // 使用抽象的Primitive而不是RectanglePrimitive
-const rectangle = viewer.scene.primitives.add(
+const rectangle = viewer.scene.primitives.append(
   new Webgis.Primitive({
     geometryInstances: instance,
     // 使用该外观，可以使矩形覆盖在地球表面，或者悬浮一定的高度

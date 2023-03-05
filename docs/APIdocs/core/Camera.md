@@ -2,26 +2,11 @@
 
 由位置、方向和视锥体定义的相机。
 
-## 构造器
+::: note
 
-**Camera(scene: Scene)**
+如果需要修改该Camera属性，可以直接通过`veiewer.scene.camera`得到camera实例进行修改。
 
-| Name    | Type                                                         | Description         |
-| :------ | :----------------------------------------------------------- | :------------------ |
-| `scene` | [Scene](https://www.vvpstk.com/public/Cesium/Documentation/Scene.html) | 场景（Scene对象）。 |
-
-## 示例代码
-
-```js
-// 创建一个位置在原点，看向z轴负方向，视角60度，长宽比1:1的相机。
-var camera = new Cesium.Camera(scene);
-camera.position = new Cesium.Cartesian3();
-camera.direction = Cesium.Cartesian3.negate(Cesium.Cartesian3.UNIT_Z, new Cesium.Cartesian3());
-camera.up = Cesium.Cartesian3.clone(Cesium.Cartesian3.UNIT_Y);
-camera.frustum.fov = Cesium.Math.PI_OVER_THREE;
-camera.frustum.near = 1.0;
-camera.frustum.far = 2.0;
-```
+:::
 
 ## 属性
 
@@ -66,29 +51,4 @@ camera.frustum.far = 2.0;
 相机向上的方向。
 
 ## 方法
-
-### [flyTo(options)]()
-
-options具有下列属性：
-
-| Name          | Type    | Description                                          |
-| :------------ | :------ | :--------------------------------------------------- |
-| `destination` | Vector3 | 相机的位置。                                         |
-| `orientation` | Object  | `可选`optional包含相机偏航角、俯仰角、翻滚角的对象。 |
-| `duration`    | Number  | `可选`optional飞行时间以秒为单位。                   |
-
-### [getPickRay(windowPosition, result):Ray]()
-
-在世界坐标中，通过像素位置`windowPosition`，从相机位置创建一条射线。
-
-| Name             | Type                                                         | Description              |
-| :--------------- | :----------------------------------------------------------- | :----------------------- |
-| `windowPosition` | [Cartesian2](https://www.vvpstk.com/public/Cesium/Documentation/Cartesian2.html) | 一个像素的x和y坐标。     |
-| `result`         | [Ray](https://www.vvpstk.com/public/Cesium/Documentation/Ray.html) | optional存储结果的对象。 |
-
-返回值:返回`Vector3`射线的位置和方向
-
-### [lookAt(target:Vector3)]()
-
-使用目标和偏移量设置相机的位置和方向，目标必须用世界坐标表示，偏移量可以是一个笛卡尔坐标，也可以是在以目标为中心的局部东北向上参考系中的heading/pitch/range。
 

@@ -12,41 +12,6 @@
 | :---------- | :---------------- | :-------------------------------- |
 | `container` | Element \| String | 将容纳Viewer的HTML DOM 元素或ID。 |
 
-对象，具有以下属性：
-
-
-| Name                                                         | Type                                                | Default                                                      | Description                                                  |
-| :----------------------------------------------------------- | :-------------------------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
-| `animation`                                                  | Boolean                                             | `true`                                                       | `optional`是否创建Animation部件。                            |
-| `fullscreenButton`                                           | Boolean                                             | `true`                                                       | `optional`如果设置为false，则不会创建FullscreenButton部件。  |
-| `vrButton`                                                   | Boolean                                             | `false`                                                      | `optional`如果设置为true，将创建VRButton部件                 |
-| `homeButton`                                                 | Boolean                                             | `true`                                                       | `optional`如果设置为false，则不会创建HomeButton部件。        |
-| `infoBox`                                                    | Boolean                                             | `true`                                                       | `optional`如果设置为false，则不会创建InfoBox部件。           |
-| `sceneModePicker`                                            | Boolean                                             | `true`                                                       | `optional`如果设置为false，将不会创建SceneModePicker部件。   |
-| `selectionIndicator`                                         | Boolean                                             | `true`                                                       | `optional`如果设置为false，则不会创建SelectionIndicator部件。 |
-| `timeline`                                                   | Boolean                                             | `true`                                                       | `optional`如果设置为false，则不会创建Timeline部件。          |
-| `navigationHelpButton`                                       | Boolean                                             | `true`                                                       | `optional`如果设置为false，将不会创建NavigationHelpButton。  |
-| `scene3DOnly`                                                | Boolean                                             | `false`                                                      | `optional`当`true`时，为了节省GPU内存，每个几何实例只会在3D下被渲染。 |
-| `shouldAnimate`                                              | Boolean                                             | `false`                                                      | `optional`如果时钟默认尝试使仿真时间前进，则为`true`，否则为`false`。此选项优先于设置[`Viewer#clockViewModel`](https://www.vvpstk.com/public/Cesium/Documentation/Viewer.html#clockViewModel)。 |
-| `clockViewModel`                                             | ClockViewModel                                      | <div style="width:100px">`new ClockViewModel(options.clock)`</div> | `optional`用于控制当前时间的ClockViewModel。                 |
-| `skyBox`                                                     | SkyBox                                              |                                                              | `optional`用于渲染星辰的天空盒，未定义时，使用默认星辰效果。 |
-| `skyAtmosphere`                                              | SkyAtmosphere                                       |                                                              | `optional`环绕地球边缘的蓝天和光晕效果，设置为`false`可将其关闭。 |
-| `fullscreenElement`                                          | Element \| String                                   | `document.body`                                              | `optional`当按下全屏按钮时，要放置到全屏模式的元素或id。     |
-| `useDefaultRenderLoop`                                       | Boolean                                             | `true`                                                       | `optional`如果此部件需要控制渲染循环，则为true，否则为false。 |
-| `targetFrameRate`                                            | Number                                              |                                                              | `optional`使用默认渲染循环时的目标帧速率。                   |
-| `showRenderLoopErrors`                                       | Boolean                                             | `true`                                                       | `optional`如果为true，如果出现渲染循环错误，此部件将自动向用户显示包含错误的HTML面板。 |
-| <div style="width:100px">`useBrowserRecommendedResolution`</div> | Boolean                                             | `false`                                                      | `optional`如果为true，则按照浏览器推荐的分辨率渲染，忽略`window.devicePixelRatio`。 |
-| `contextOptions`                                             | Object                                              |                                                              | `optional`Context 和 WebGL 的创建属性，与传递给[`Scene`](https://www.vvpstk.com/public/Cesium/Documentation/Scene.html)的`options`相一致。 |
-| `sceneMode`                                                  | SceneMode                                           | <div style="width:100px">`SceneMode.SCENE3D`</div>           | `optional`初始场景模式（SceneMode）。                        |
-| `mapProjection`                                              | MapProjection                                       | <div style="width:100px">`new GeographicProjection()`</div>  | `optional`在2D和哥伦布视图模式中使用的地图投影。             |
-| <div style="width:100px">`orderIndependentTranslucency`</div> | Boolean                                             | `true`                                                       | `optional`如果为true，且设备支持，则使用与顺序无关的半透明性。 |
-| `dataSources`                                                | <div style="width:20px">DataSource Collection</div> | <div style="width:100px">`new DataSourceCollection()`</div>  | `optional`由部件可视化的数据源集合。如果提供了该参数，则假定该实例为调用者所有，并且不会在销毁查看器（viewer）时销毁该实例。 |
-| `shadows`                                                    | Boolean                                             | `false`                                                      | `optional`确定阴影是否由太阳投射形成。                       |
-| `mapMode2D`                                                  | MapMode2D                                           | <div style="width:100px">`MapMode2D.INFINITE_SCROLL`</div>   | `optional`确定2D地图是可旋转的，还是可以在水平方向上无限滚动。 |
-| `projectionPicker`                                           | Boolean                                             | `false`                                                      | `optional`如果设置为true，则会创建ProjectionPicker部件。     |
-| `requestRenderMode`                                          | Boolean                                             | `false`                                                      | `optional`如果为true，渲染帧将只在需要时发生，由场景中的变化决定。启用可减少应用程序的CPU/GPU使用量， 并减少移动设备上的电池消耗，但需要使用[`Scene#requestRender`](https://www.vvpstk.com/public/Cesium/Documentation/Scene.html#requestRender)在此模式下显式渲染新帧。在许多情况下，在API的其他部分对场景进行更改之后，这将是必要的。 请参考[Improving Performance with Explicit Rendering](https://cesium.com/blog/2018/01/24/cesium-scene-rendering-performance/)。 |
-| <div style="width:100px">`maximumRenderTimeChange`</div>     | Number                                              | `0.0`                                                        | `optional`如果requestRenderMode为true，则此值定义在渲染被请求之前允许的最大仿真时间更改。 请参考[Improving Performance with Explicit Rendering](https://cesium.com/blog/2018/01/24/cesium-scene-rendering-performance/)。 |
-
 ## 代码实例
 
 ::: code-tabs#Viewer
@@ -66,15 +31,27 @@ const viewer = new WebGis.Viewer(containerId)
 
 ## 属性
 
-### **[camera]()**
+### axes: <font color="gray">boolean</font>
 
-获取或设置相机
+:triangular_flag_on_post:
 
-###  [container : Element]()
+是否显示坐标轴。
+
+### axesLength:<font color="gray">number</font>
+
+:triangular_flag_on_post:
+
+坐标轴长度，默认为10。
+
+###  container : <font color=gray>Element</font>
+
+:triangular_flag_on_post:
 
 获取父容器。
 
-### [**Entities: EntityGroup**]()
+### entities:[ EntityGroup](../entity/EntityGroup.md)
+
+:triangular_flag_on_post:
 
 获取未关联到特定数据源的实体集合
 
@@ -112,21 +89,13 @@ const viewer = new WebGis.Viewer(containerId)
 
 获取或设置渲染分辨率的比例因子。 小于1.0的值可以在功能较弱的设备上提高性能，而大于1.0的值将以更高的分辨率渲染，然后缩小比例，从而提高视觉保真度。 例如，如果部件的大小为640x480，将该值设置为0.5将导致场景以320x240的大小呈现，然后按比例放大， 而将其设置为2.0将导致场景以1280x960的大小呈现，然后按比例缩小。
 
-### **[Scene]()**
+### scene: [Scene](./Scene.md)
 
-获取场景Scene
-
-### [sceneModePicker : SceneModePicker]()
+:triangular_flag_on_post:
 
 `readonly`
 
-获取场景模式选择器（SceneModePicker）。
-
-### [screenSpaceEventHandler : ScreenSpaceEventHandler]()
-
-`readonly`
-
-获取屏幕空间事件处理程序（ScreenSpaceEventHandler）。
+获取场景Scene。
 
 ### [selectedEntity : Entity]()
 
@@ -146,7 +115,7 @@ const viewer = new WebGis.Viewer(containerId)
 
 ### **[shadows : Boolean]()**
 
-确定阴影是否由太阳投射形成。
+确定阴影是否由点光源投射形成。
 
 ### [trackedEntity : Entity]()
 
@@ -178,6 +147,34 @@ const viewer = new WebGis.Viewer(containerId)
 
 销毁部件。如果从布局中永久删除viewer部件，则应调用。
 
+### drillPick(windowPosition,objects,recursive): <font color="gray">&lt;Array&gt;object</font>
+
+:triangular_flag_on_post:
+
+| Name           | Type                                          | Description                                                  |
+| -------------- | --------------------------------------------- | ------------------------------------------------------------ |
+| windowPosition | [Vector2](../math/Vector2.md)                 | 屏幕坐标。                                                   |
+| object         | &lt;Array&gt;[Object3D](../basic/Object3D.md) | 检测与射线相交的一组物体。                                   |
+| recursive      | <font color="gray">boolean</font>             | `optional`若为true，则同时也会检查所有的后代。<br />否则将只会检查对象本身。默认值为true。 |
+
+从相机位置到windowPosition做一条射线，检测所有在射线与这些物体之间，包括或不包括后代的相交部分。返回结果时，相交部分将按距离进行排序，最近的位于第一个）。
+
+该方法返回一个包含有交叉部分的数组:
+
+```js
+[ { distance, point, object }, ... ]
+```
+
+- distance: number —— 射线投射原点和相交部分之间的距离。
+
+- point: Vector3 —— 相交部分的点（世界坐标）。
+
+- object: Object3D —— 相交的物体。
+
+### [isDestroyed(): Boolean]()
+
+**返回值**: 如果对象已被销毁，则为true，否则为false。
+
 ### [flyTo (target, options ): Promise&lt;boolean&gt;]()
 
 相机定位到指定实体或者图元处，相机移动过程有一个动画效果。
@@ -193,36 +190,85 @@ const viewer = new WebGis.Viewer(containerId)
 | `duration`      | Number                                                       | `3.0`   | `optional`飞行时间以秒为单位。                               |
 | `maximumHeight` | Number                                                       |         | `optional`飞行中的最高高度。                                 |
 | `offset`        | [HeadingPitchRange](https://www.vvpstk.com/public/Cesium/Documentation/HeadingPitchRange.html) |         | `optional`在当地的东北向上（east-north-up）参考系中从目标到以目标为中心的偏移量。 |
+| `scale`         | boolean                                                      | false   | `optional`是否支持缩放                                       |
 
 **返回值**：飞行成功时，promise被解析为true；如果实体未在场景中可视化或飞行取消，promise被解析为false。
+
+### flyTo(position,options)
+
+
 
 ### [forceResize()]()
 
 这迫使部件重新考虑它的布局，包括部件大小和版权的放置。
 
-### [isDestroyed(): Boolean]()
+### getPrimitiveByName(name): [Object3D](../basic/Object3D.md)
 
-**返回值**: 如果对象已被销毁，则为true，否则为false。
+:triangular_flag_on_post:
 
-### [render()]()
+| Name | Type   | Description          |
+| ---- | ------ | -------------------- |
+| name | string | 要获取的图元的名称。 |
 
-渲染的场景。除非`useDefaultRenderLoop`设置为false，否则自动调用此函数。
+根据图元的名称获取图元。若未找到则返回`undefined`。
+
+请注意，大多数的图元中name默认是一个空字符串，要使用这个方法，你将需要手动地设置name属性。
+
+### pick(windowPosition ,object,recursive): <font color="gray">: Array</font>
+
+:triangular_flag_on_post:
+
+| Name           | Type                              | Description                                                  |
+| -------------- | --------------------------------- | ------------------------------------------------------------ |
+| windowPosition | [Vector2](../math/Vector2.md)     | 屏幕坐标。                                                   |
+| object         | [Object3D](../basic/Object3D.md)  | 检测与射线相交的物体。                                       |
+| recursive      | <font color="gray">boolean</font> | `optional`若为true，则同时也会检查所有的后代。<br />否则将只会检查对象本身。默认值为true。 |
+
+从相机位置到windowPosition做一条射线，检测是否与object相交。
+
+检测所有在射线与物体之间，包括或不包括后代的相交部分。返回结果时，相交部分将按距离进行排序，最近的位于第一个。
+该方法返回一个包含有交叉部分的数组:
+
+```js
+[ { distance, point, object }, ... ]
+```
+
+- distance: number —— 射线投射原点和相交部分之间的距离。
+
+- point: Vector3 —— 相交部分的点（世界坐标）。
+
+- object: Object3D —— 相交的物体。
+
+### pickPosition(windowPosition): [ Vector3](../math/Vector3.md)|<font color="gray">undefined</font>
+
+:triangular_flag_on_post:
+
+| Name             | Type                          | Description |
+| :--------------- | :---------------------------- | :---------- |
+| `windowPosition` | [Vector2](../math/Vector2.md) | 屏幕坐标。  |
+
+从相机到屏幕坐标做一条射线，拾取场景中物体上的点。
+
+返回相交点的世界坐标；若没有交点返回`undefined`。
+
+::: note
+
+要使用此方法，必须给要拾取点的物体赋值`name`属性。
+
+:::
 
 ### [resize()]()
 
 调整部件的大小以匹配容器的大小。 除非`useDefaultRenderLoop`被设置为false，否则将根据需要自动调用此函数。
 
-### [zoomTo(target, offset): Promise&lt;Boolean&gt;]()
+### setSkyBox(source,show)
 
-异步设置相机以查看提供的实体、实体集或数据源。 如果数据源仍然在加载过程中，或者可视化仍然在加载中，则此方法将等待数据准备好后再执行缩放。
+:triangular_flag_on_post:
 
-偏移量是在以包围球中心为中心的当地东北向上（east-north-up）参考坐标系中的航向/俯仰/范围（heading/pitch/range）。 航向和俯仰角是在当地的东北向上（east-north-up）参考系中确定的。 航向（heading）是从y轴向x轴递增的角度。俯仰（Pitch）是从xy平面旋转过来的。正俯仰角在平面之上。负俯仰角在平面以下。 范围是到中心的距离。如果范围为零，则计算范围使整个包围球可见。
+| Name   | Type                                                         | Description                                                  |
+| ------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| source | {<br />  &nbsp; px:string<br /> &nbsp; mx:string<br /> &nbsp; py:string<br />  &nbsp; my:string<br />  &nbsp; pz:string<br /> &nbsp;  mz:string<br />} | 天空盒纹理贴图，<br />传入前后、左右、上下六个面的纹理图片路径。 |
+| show   | boolean                                                      | 是否显示天空盒。                                             |
 
-在2D中，必须是一个自顶向下的视图。相机将被放置在目标上方向下看。目标上方的高度将是范围。 航向（heading）将从偏移量确定。如果无法从偏移量确定航向，则航向为北。
+未定义时，默认使用星辰效果。
 
-| Name     | Type                                                         | Description                                                  |
-| :------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
-| `target` | Entity                                                       | 要查看的实体。                                               |
-| `offset` | [HeadingPitchRange](https://www.vvpstk.com/public/Cesium/Documentation/HeadingPitchRange.html) | optional在本地东北方向上（east-north-up）的参考系中，从实体中心的偏移量。 |
-
-**返回值**: 缩放成功时，promise被解析为true；如果实体未在场景中可视化或缩放取消，promise被解析为false。

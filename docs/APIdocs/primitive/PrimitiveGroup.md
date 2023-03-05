@@ -14,7 +14,7 @@ const group = new WebGis.PrimitiveGroup()
 
 ## 属性
 
-**[destroyPrimitives :boolean]()**
+### **[destroyPrimitives :boolean]()**
 
 确定当[`PrimitiveGroup.destroy`]()删除或[`PrimitiveGroup.remove`]()删除 或[`PrimitiveGroup.removeAll`]()隐式删除集合中的图元时，该图元是否被销毁。
 
@@ -40,24 +40,22 @@ labels = labels.destroy();    // 显式销毁
 
 获取集合中图元的数量。
 
-**[show: boolean]()**
+### **[show: boolean]()**
 
 是否显示集合中的图元。默认值:`true`
 
 ## 方法
 
-**[add(primitive, index) : Object]()**
+### append(primitive, index) 
+
+:triangular_flag_on_post:
 
 向集合中添加图元。
 
-| Name        | Type   | Description                                              |
-| :---------- | :----- | :------------------------------------------------------- |
-| `primitive` | Object | 要添加的图元。                                           |
-| `index`     | Number | optional要添加图元的索引，如果省略将被添加到集合最底层。 |
-
-Returns:
-
-添加到集合中的图元。
+| Name        | Type   | Description                                                |
+| :---------- | :----- | :--------------------------------------------------------- |
+| `primitive` | Object | 要添加的图元。:triangular_flag_on_post:                    |
+| `index`     | Number | `optional`要添加图元的索引，如果省略将被添加到集合最底层。 |
 
 Example:
 
@@ -65,7 +63,7 @@ Example:
 var billboards = scene.primitives.add(new Cesium.BillboardCollection());
 ```
 
-**[contains(primitive):  Boolean]()**
+### **[contains(primitive):  Boolean]()**
 
 集合中是否包含此图元。
 
@@ -77,7 +75,7 @@ Returns:
 
 如果找到该图元返回`true`，如果图元为undefined或者未找到则返回`false`。
 
-**[destroy()]()**
+### **[destroy()]()**
 
 销毁此集合中每个图元持有的WebGL资源。 显式销毁这个集合允许WebGL资源的确定性释放，而不是依赖于垃圾收集器来销毁这个集合。
 
@@ -85,7 +83,7 @@ Returns:
 
 一旦对象被销毁，它将不能在使用; 调用除`isDestroyed`之外的任何函数都会导致[`DeveloperError`](https://www.vvpstk.com/public/Cesium/Documentation/DeveloperError.html)异常。 因此，将返回值（`undefined`）赋给对象，如示例所示。
 
-**[get(index):  Object]()**
+### **[get(index):  Object]()**
 
 返回指定索引处的图元。
 
@@ -109,7 +107,7 @@ for (var i = 0; i < length; ++i) {
 }
 ```
 
-**[isDestroyed():  Boolean]()**
+### **[isDestroyed():  Boolean]()**
 
 如果该对象没被销毁，返回false。
 
@@ -119,7 +117,7 @@ Returns:
 
 如果该对象没被销毁，返回false。
 
-**[lower(primitive)]()**
+### **[lower(primitive)]()**
 
 将图元在集合中的位置下移一位（如果所有图元都被绘制在地球上，这意味着在视觉上把图元向下移动了一位）。
 
@@ -127,7 +125,7 @@ Returns:
 | :---------- | :----- | :--------------------------- |
 | `primitive` | Object | optional要被向下移动的图元。 |
 
-**[lowerToBottom(primitive)]()**
+### **[lowerToBottom(primitive)]()**
 
 将图元在集合中的位置移到最下面（如果所有图元都被绘制在地球上，这意味着在视觉上把图元移到最下面）。
 
@@ -135,7 +133,7 @@ Returns:
 | :---------- | :----- | :----------------------------- |
 | `primitive` | Object | optional被移到到最下面的图元。 |
 
-**[raise(primitive)]()**
+### **[raise(primitive)]()**
 
 将图元在集合中的位置上移一位（如果所有图元都被绘制在地球上，这意味着在视觉上把图元向上移动了一位）。
 
@@ -143,7 +141,7 @@ Returns:
 | :---------- | :----- | :--------------------------- |
 | `primitive` | Object | optional要被向上移动的图元。 |
 
-**[raiseToTop(primitive)]()**
+### **[raiseToTop(primitive)]()**
 
 将图元在集合中的位置移到最上面 （如果所有图元都被绘制在地球上，这意味着在视觉上把图元移到最上面）。
 
@@ -151,7 +149,7 @@ Returns:
 | :---------- | :----- | :----------------------------- |
 | `primitive` | Object | optional被移到到最上面的图元。 |
 
-**[remove(primitive):  Boolean]()**
+### **[remove(primitive):  Boolean]()**
 
 从集合中移除图元。
 
@@ -170,6 +168,6 @@ var billboards = scene.primitives.add(new Cesium.BillboardCollection());
 scene.primitives.remove(p);  // 返回true
 ```
 
-**[removeAll()]()**
+### **[removeAll()]()**
 
 从集合中移除所有图元。

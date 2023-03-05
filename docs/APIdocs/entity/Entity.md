@@ -8,34 +8,34 @@ Entity实例将多种形式的可视化聚合为单个高级对象。 它们可�
 
 options对象，具有以下属性：
 
-| Name             | Type                                                         | Description                                                  |
-| :--------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
-| `id`             | String                                                       | `optional`此对象的唯一标识符。如果没有提供，则生成GUID。     |
-| `name`           | String                                                       | `optional`指定名字，它不必是唯一的。                         |
-| `availability`   | [TimeIntervalCollection](https://www.vvpstk.com/public/Cesium/Documentation/TimeIntervalCollection.html) | `optional`与此对象相关联的时间区间集合，超出该时间集合，对象将不可用。 |
-| `show`           | Boolean                                                      | `optional`是否显示实体和它的children（子实体）。             |
-| `description`    | [Property](https://www.vvpstk.com/public/Cesium/Documentation/Property.html) | `optional`指定此实体的HTML描述的字符串属性。                 |
-| `position`       | [PositionProperty](https://www.vvpstk.com/public/Cesium/Documentation/PositionProperty.html) | `optional`指定实体位置的属性。                               |
-| `orientation`    | [Property](https://www.vvpstk.com/public/Cesium/Documentation/Property.html) | `optional`指定实体方向的属性。                               |
-| `viewFrom`       | [Property](https://www.vvpstk.com/public/Cesium/Documentation/Property.html) | `optional`用于查看该对象的建议初始偏移量。                   |
-| `parent`         | [Entity](https://www.vvpstk.com/public/Cesium/Documentation/Entity.html) | `optional`和这个对象关联的父实体.                            |
-| `billboard`      | [BillboardGraphics](https://www.vvpstk.com/public/Cesium/Documentation/BillboardGraphics.html) | `optional`与此实体关联的布告板。                             |
-| `box`            | [BoxGraphics](https://www.vvpstk.com/public/Cesium/Documentation/BoxGraphics.html) | `optional`与此实体关联的盒子.                                |
-| `corridor`       | [CorridorGraphics](https://www.vvpstk.com/public/Cesium/Documentation/CorridorGraphics.html) | `optional`与此实体关联的廊道。                               |
-| `cylinder`       | [CylinderGraphics](https://www.vvpstk.com/public/Cesium/Documentation/CylinderGraphics.html) | `optional`与此实体关联的圆柱体。                             |
-| `ellipse`        | [EllipseGraphics](https://www.vvpstk.com/public/Cesium/Documentation/EllipseGraphics.html) | `optional`与此实体关联的椭圆或圆。                           |
-| `ellipsoid`      | [EllipsoidGraphics](https://www.vvpstk.com/public/Cesium/Documentation/EllipsoidGraphics.html) | `optional`与此实体关联的椭球或球。                           |
-| `label`          | [LabelGraphics](https://www.vvpstk.com/public/Cesium/Documentation/LabelGraphics.html) | `optional`与此实体关联的标注。                               |
-| `model`          | [ModelGraphics](https://www.vvpstk.com/public/Cesium/Documentation/ModelGraphics.html) | `optional`与此实体关联的模型。                               |
-| `path`           | [PathGraphics](https://www.vvpstk.com/public/Cesium/Documentation/PathGraphics.html) | `optional`与此实体关联的路径。                               |
-| `plane`          | [PlaneGraphics](https://www.vvpstk.com/public/Cesium/Documentation/PlaneGraphics.html) | `optional`与此实体关联的平面。                               |
-| `point`          | [PointGraphics](https://www.vvpstk.com/public/Cesium/Documentation/PointGraphics.html) | `optional`与此实体关联的点。                                 |
-| `polygon`        | [PolygonGraphics](https://www.vvpstk.com/public/Cesium/Documentation/PolygonGraphics.html) | `optional`与此实体关联的多边形。                             |
-| `polyline`       | [PolylineGraphics](https://www.vvpstk.com/public/Cesium/Documentation/PolylineGraphics.html) | `optional`与此实体关联的折线。                               |
-| `properties`     | [PropertyBag](https://www.vvpstk.com/public/Cesium/Documentation/PropertyBag.html) | `optional`与此实体关联的任意属性。                           |
-| `polylineVolume` | [PolylineVolumeGraphics](https://www.vvpstk.com/public/Cesium/Documentation/PolylineVolumeGraphics.html) | `optional`与此实体关联的折线体。                             |
-| `rectangle`      | [RectangleGraphics](https://www.vvpstk.com/public/Cesium/Documentation/RectangleGraphics.html) | `optional`与此实体关联的矩形。                               |
-| `wall`           | [WallGraphics](https://www.vvpstk.com/public/Cesium/Documentation/WallGraphics.html) | `optional`与此实体关联的墙体。                               |
+| Name                                | Type                          | Description                                                  |
+| :---------------------------------- | :---------------------------- | :----------------------------------------------------------- |
+| `id`                                | String                        | `optional`此对象的唯一标识符。如果没有提供，则生成GUID。     |
+| `name`                              | String                        | `optional`指定名字，它不必是唯一的。                         |
+| `availability`                      | TimeIntervalCollection        | `optional`与此对象相关联的时间区间集合，超出该时间集合，对象将不可用。 |
+| `show`                              | Boolean                       | `optional`是否显示实体和它的children（子实体）。             |
+| `description`                       | Property                      | `optional`指定此实体的HTML描述的字符串属性。                 |
+| `position`:triangular_flag_on_post: | [Vector3](../math/Vector3.md) | `optional`指定实体位置的属性。                               |
+| `orientation`                       | Property                      | `optional`指定实体方向的属性。                               |
+| `viewFrom`                          | Property                      | `optional`用于查看该对象的建议初始偏移量。                   |
+| `parent`                            | [Entity](./Entity.md)         | `optional`和这个对象关联的父实体.                            |
+| `billboard`                         | BillboardGraphics             | `optional`与此实体关联的布告板。                             |
+| `box`                               | BoxGraphics                   | `optional`与此实体关联的盒子.                                |
+| `corridor`                          | CorridorGraphics              | `optional`与此实体关联的廊道。                               |
+| `cylinder`                          | CylinderGraphics              | `optional`与此实体关联的圆柱体。                             |
+| `ellipse`                           | EllipseGraphics               | `optional`与此实体关联的椭圆或圆。                           |
+| `ellipsoid`                         | EllipsoidGraphics             | `optional`与此实体关联的椭球或球。                           |
+| `label`                             | LabelGraphics                 | `optional`与此实体关联的标注。                               |
+| `model`:triangular_flag_on_post:    | ModelGraphics                 | `optional`与此实体关联的模型。                               |
+| `path`                              | PathGraphics                  | `optional`与此实体关联的路径。                               |
+| `plane`                             | PlaneGraphics                 | `optional`与此实体关联的平面。                               |
+| `point`                             | PointGraphics                 | `optional`与此实体关联的点。                                 |
+| `polygon`                           | PolygonGraphics               | `optional`与此实体关联的多边形。                             |
+| `polyline`                          | PolylineGraphics              | `optional`与此实体关联的折线。                               |
+| `properties`                        | PropertyBag                   | `optional`与此实体关联的任意属性。                           |
+| `polylineVolume`                    | PolylineVolumeGraphics        | `optional`与此实体关联的折线体。                             |
+| `rectangle`                         | RectangleGraphics             | `optional`与此实体关联的矩形。                               |
+| `wall`                              | WallGraphics                  | `optional`与此实体关联的墙体。                               |
 
 ## 属性
 
